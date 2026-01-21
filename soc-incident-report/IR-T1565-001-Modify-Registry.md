@@ -29,36 +29,34 @@ rule.mitre.id: T1565.001
 ```
 ## 3. Affected Asset Information
 
-- **Hostname:** __________________  
+- **Hostname:** window10
   - Wazuh field: `agent.name`
 
-- **Agent ID:** __________________  
+- **Agent ID:** 001  
   - Wazuh field: `agent.id`
 
-- **Operating System:** __________________  
+- **Operating System:** window10  
   - Wazuh field: `agent.os.name`
 
-- **IP Address:** __________________  
+- **IP Address:** 192.168.100.20  
   - Wazuh field: `agent.ip`
-
-- **Logged-on User:** __________________  
-  - Wazuh field: `data.win.eventdata.SubjectUserName`
 
 ---
 
 ## 4. Registry Modification Details
 
 - **Registry Key Path:** __________________  
-  - Wazuh field: `data.win.eventdata.TargetObject`
+  - Wazuh field: `syscheck.path`
 
-- **Registry Value Name:** __________________  
-  - Wazuh field: `data.win.eventdata.ValueName`
+- **Registry Action:** modified  
+  - Wazuh field: `syscheck.event`
 
-- **Modified Value Data:** __________________  
-  - Wazuh field: `data.win.eventdata.Details`
+- **Registry Value (if available):** __________________  
+  - Wazuh field: `syscheck.value_name`
 
-- **Windows Event ID:** __________________  
-  - Wazuh field: `data.win.system.eventID`
+- **Windows Event Channel:** __________________  
+  - Wazuh field: `win.system.channel`
+
 
 > Common Event IDs related to registry modification:
 > - `4657` – Registry value modification  
@@ -68,14 +66,18 @@ rule.mitre.id: T1565.001
 
 ## 5. Process & Execution Context
 
-- **Process Name:** __________________  
-  - Wazuh field: `data.win.eventdata.ProcessName`
+> Note: This alert was generated from registry monitoring (FIM).  
+> Process execution details were not available in the current telemetry.
 
-- **Process ID:** __________________  
-  - Wazuh field: `data.win.eventdata.ProcessId`
+- **Process Information:** Not available  
+- **Reason:** Registry modification detected via Wazuh FIM (syscheck), which does not include process execution context by default.
 
-- **Parent Process Name:** __________________  
-  - Wazuh field: `data.win.eventdata.ParentProcessName`
+- **Relevant Decoder:** __________________  
+  - Wazuh field: `decoder.name`
+
+- **Raw Log Reference:**  
+  - Wazuh field: `full_log`
+
 
 ---
 
