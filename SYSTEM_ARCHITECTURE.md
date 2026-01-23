@@ -8,9 +8,9 @@ This document describes the overall system architecture and operational flow of 
 
 ## 🖥️ Environment Overview
 
-- **Host OS:** ______________________  
-- **Virtualization Platform:** ______________________  
-- **Network Mode:** ______________________  
+- **Host OS:** Windows 10 (Host Machine)  
+- **Virtualization Platform:** Oracle VirtualBox  
+- **Network Mode:** Internal Network + NAT  
 
 ---
 
@@ -18,10 +18,10 @@ This document describes the overall system architecture and operational flow of 
 
 | Component | Operating System | Role |
 |---------|------------------|------|
-| SIEM Server | __________________ | Log collection, correlation, and alerting |
-| Endpoint Agent (EDR) | __________________ | Endpoint monitoring & telemetry collection |
-| Attack VM | __________________ | Adversary simulation and attack execution |
-| Victim VM | __________________ | Target system for attack scenarios |
+| SIEM Server | Ubuntu Server 22.04 LTS | Log collection, correlation, and alerting |
+| Endpoint Agent (EDR) | Windows 10 | Endpoint monitoring & telemetry collection |
+| Attack VM | Kali Linux | Adversary simulation and attack execution |
+| Victim VM | Windows 10 | Target system for attack scenarios |
 
 ---
 
@@ -73,12 +73,3 @@ and IP addressing used within the Home SOC Lab environment.
 
 ---
 
-## 📁 Diagram File Structure (Recommended)
-
-```text
-Home-Soc-Lab/
-├── SYSTEM_ARCHITECTURE.md
-└── architecture/
-    ├── 01-home-soc-lab-overall-flow.png
-    ├── 02-wazuh-flow-detailed.png
-    └── 03-virtual-machine-network-layout.png
